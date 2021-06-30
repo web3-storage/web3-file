@@ -1,6 +1,5 @@
 import { Blob } from '@web-std/blob'
-// @ts-ignore stream-to-it has no exported types
-import toIterable from 'stream-to-it'
+import toIterable from 'browser-readablestream-to-it'
 
 /**
  * Web3 File class
@@ -85,7 +84,7 @@ export class Web3File {
    * @param {Web3FileOpts} options
    */
   static fromReadableStream (readableStream, filename, options) {
-    return new Web3File(toIterable.source(readableStream), filename, options)
+    return new Web3File(toIterable(readableStream), filename, options)
   }
 
   /**

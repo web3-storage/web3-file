@@ -41,7 +41,7 @@
   "license": "MIT",
   "dependencies": {
     "@web-std/blob": "2.1.1",
-    "stream-to-it": "^0.2.3"
+    "browser-readablestream-to-it": "^1.0.2"
   },
   "devDependencies": {
     "@web-std/file": "1.1.0",
