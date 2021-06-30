@@ -46,8 +46,8 @@ Please note that the same options of the constructor can be provided in the stat
 
 | Name | Type | Description |
 |------|------|-------------|
-| filename | `string` | filename |
 | content | `AsyncIterable<Uint8Array>` | File content to be read |
+| filename | `string` | filename |
 | [options] | `object` | Web3File options |
 | [options.path] | `string` | File Path |
 | [options.lastModified] | `number` | Last modified timestamp |
@@ -116,7 +116,7 @@ const file = Web3File.fromBytes(new Uint8Array([2, 44, 1]), 'file.zip')
 Takes a string content to create a Web3File.
 
 ```js
-import Web3File from 'web3-file'
+import { Web3File } from 'web3-file'
 
 const file = Web3File.fromString('web3file', 'file.txt')
 ```
@@ -126,7 +126,7 @@ const file = Web3File.fromString('web3file', 'file.txt')
 Takes a [Readable Stream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream) content to create a Web3File.
 
 ```js
-import Web3File from 'web3-file'
+import { Web3File } from 'web3-file'
 
 const response = await fetch('https://example.org/image.png')
 const file = Web3File.fromReadableStream(response.body, 'image.png')
@@ -137,7 +137,7 @@ const file = Web3File.fromReadableStream(response.body, 'image.png')
 Takes a [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) content to create a Web3File.
 
 ```js
-import Web3File from 'web3-file'
+import { Web3File } from 'web3-file'
 
 const response = await fetch('https://example.org/image.png')
 const blob = await response.blob()
@@ -149,7 +149,7 @@ const file = Web3File.fromBlob(blob, 'image.png')
 Takes a [File](https://developer.mozilla.org/en-US/docs/Web/API/File) content to create a Web3File.
 
 ```js
-import Web3File from 'web3-file'
+import { Web3File } from 'web3-file'
 
 const image = new File([bytes], 'image.png')
 const file = Web3File.fromFile(webFile)
