@@ -1,0 +1,24 @@
+{
+  "name": "web3-file",
+  "version": "0.0.0",
+  "description": "Web3 File",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web3-storage/web3-file.git"
+  },
+  "keywords": [
+    "web3",
+    "ipfs",
+    "content-addressable"
+  ],
+  "author": "Vasco Santos <santos.vasco10@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/web3-storage/web3-file/issues"
+  },
+  "homepage": "https://github.com/web3-storage/web3-file#readme"
+}
