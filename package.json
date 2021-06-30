@@ -38,7 +38,7 @@
     "content-addressable"
   ],
   "author": "Vasco Santos <santos.vasco10@gmail.com>",
-  "license": "MIT",
+  "license": "(Apache-2.0 AND MIT)",
   "dependencies": {
     "@web-std/blob": "2.1.1",
     "browser-readablestream-to-it": "^1.0.2"
