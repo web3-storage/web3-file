@@ -35,7 +35,7 @@ Please note that the same options of the constructor can be provided in the stat
 | [options.lastModified] | `number` | Last modified timestamp |
 
 ```js
-import Web3File from 'web3-file'
+import { Web3File } from 'web3-file'
 
 const file = new Web3File(
   'file.zip',
@@ -100,7 +100,7 @@ Takes a string content to create a Web3File.
 ```js
 import Web3File from 'web3-file'
 
-const file = Web3File.fromBytes('file.zip', 'web3file')
+const file = Web3File.fromString('file.txt', 'web3file')
 ```
 
 ### `Web3File.fromReadableStream`
@@ -110,8 +110,8 @@ Takes a [Readable Stream](https://developer.mozilla.org/en-US/docs/Web/API/Reada
 ```js
 import Web3File from 'web3-file'
 
-const response = await fetch('https://www.your.url')
-const file = Web3File.fromReadableStream('file.zip', response.body)
+const response = await fetch('https://example.org/image.png')
+const file = Web3File.fromReadableStream('image.png', response.body)
 ```
 
 ### `Web3File.fromBlob`
@@ -121,9 +121,9 @@ Takes a [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) content to
 ```js
 import Web3File from 'web3-file'
 
-const response = await fetch('https://www.your.url')
+const response = await fetch('https://example.org/image.png')
 const blob = await response.blob()
-const file = Web3File.fromBlob('file.zip', blob)
+const file = Web3File.fromBlob('image.png', blob)
 ```
 
 ### `Web3File.fromFile`
@@ -133,6 +133,6 @@ Takes a [File](https://developer.mozilla.org/en-US/docs/Web/API/File) content to
 ```js
 import Web3File from 'web3-file'
 
-const webFile = new File([bytes], filename)
-const file = Web3File.fromFile('file.zip', webFile)
+const image = new File([bytes], 'image.png')
+const file = Web3File.fromFile(webFile)
 ```
