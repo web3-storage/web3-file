@@ -2,6 +2,24 @@
 
 The [Web File](https://developer.mozilla.org/en-US/docs/Web/API/File) implementation for Web3.
 
+## Table of Contents
+
+* [Motivation](#motivation)
+* [Install](#install)
+* [API](#api)
+  + [class Web3File](#class-web3file)
+  + [`Web3File#name`](#web3file%23name)
+  + [`Web3File#path`](#web3file%23path)
+  + [`Web3File#lastModified`](#web3file%23lastmodified)
+  + [`Web3File#content`](#web3file%23content)
+  + [`Web3File#iterator()`](#web3file%23iterator)
+  + [`Web3File#blob()`](#web3file%23blob)
+  + [`Web3File.fromBytes`](#web3filefrombytes)
+  + [`Web3File.fromString`](#web3filefromstring)
+  + [`Web3File.fromReadableStream`](#web3filefromreadablestream)
+  + [`Web3File.fromBlob`](#web3filefromblob)
+  + [`Web3File.fromFile`](#web3filefromfile)%
+
 ## Motivation
 
 The [Web File](https://developer.mozilla.org/en-US/docs/Web/API/File) implementation and standard are still on their beginning.
