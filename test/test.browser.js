@@ -19,7 +19,7 @@ describe('web3File in the browser', () => {
         const filename = 'file.txt'
         const bytes = new TextEncoder().encode(data)
 
-        const file = Web3File.fromBlob(filename, new Blob([bytes]))
+        const file = Web3File.fromBlob(new Blob([bytes]), filename)
 
         validateRequiredContent(file, filename)
         await validator(file, bytes)
@@ -42,7 +42,7 @@ describe('web3File in the browser', () => {
         const bytes = new TextEncoder().encode(data)
         const readableStream = iteratorToStream(new Set([bytes]).values())
 
-        const file = Web3File.fromReadableStream(filename, readableStream)
+        const file = Web3File.fromReadableStream(readableStream, filename)
 
         validateRequiredContent(file, filename)
         await validator(file, bytes)

@@ -8,13 +8,13 @@ import toIterable from 'stream-to-it'
  */
 export class Web3File {
   /**
-   * @param {string} filename
    * @param {AsyncIterable<Uint8Array>|Iterable<Uint8Array>} content
+   * @param {string} filename
    * @param {Web3FileOpts} [options]
    */
-  constructor (filename, content, options = {}) {
-    this._filename = filename
+  constructor (content, filename, options = {}) {
     this._content = content
+    this._filename = filename
     this._lastModified = options.lastModified || Date.now()
     this._path = options.path
   }
@@ -60,41 +60,41 @@ export class Web3File {
   }
 
   /**
-   * @param {string} filename
    * @param {Uint8Array} data
+   * @param {string} filename
    * @param {Web3FileOpts} options
    */
-  static fromBytes (filename, data, options) {
-    return new Web3File(filename, [data], options)
+  static fromBytes (data, filename, options) {
+    return new Web3File([data], filename, options)
   }
 
   /**
-   * @param {string} filename
    * @param {string} data
+   * @param {string} filename
    * @param {Web3FileOpts} options
    */
-  static fromString (filename, data, options) {
+  static fromString (data, filename, options) {
     const bytes = new TextEncoder().encode(data)
 
-    return this.fromBytes(filename, bytes, options)
+    return this.fromBytes(bytes, filename, options)
   }
 
   /**
-   * @param {string} filename
    * @param {ReadableStream} readableStream
+   * @param {string} filename
    * @param {Web3FileOpts} options
    */
-  static fromReadableStream (filename, readableStream, options) {
-    return new Web3File(filename, toIterable.source(readableStream), options)
+  static fromReadableStream (readableStream, filename, options) {
+    return new Web3File(toIterable.source(readableStream), filename, options)
   }
 
   /**
-   * @param {string} filename
    * @param {Blob} blob
+   * @param {string} filename
    * @param {Web3FileOpts} options
    */
-  static fromBlob (filename, blob, options) {
-    return this.fromReadableStream(filename, blob.stream(), options)
+  static fromBlob (blob, filename, options) {
+    return this.fromReadableStream(blob.stream(), filename, options)
   }
 
   /**
@@ -102,7 +102,7 @@ export class Web3File {
    * @param {Web3FileOpts} options
    */
   static fromFile (file, options) {
-    return this.fromReadableStream(file.name, file.stream(), {
+    return this.fromReadableStream(file.stream(), file.name, {
       lastModified: file.lastModified,
       ...options
     })

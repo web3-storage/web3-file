@@ -10,7 +10,7 @@ describe('web3File', () => {
     const filename = 'file.txt'
     const bytes = new TextEncoder().encode(data)
 
-    const file = new Web3File(filename, [bytes])
+    const file = new Web3File([bytes], filename)
 
     validateRequiredContent(file, filename)
     expect(file.path).to.eql('')
@@ -24,7 +24,7 @@ describe('web3File', () => {
     const lastModified = Date.now()
     const bytes = new TextEncoder().encode(data)
 
-    const file = new Web3File(filename, [bytes], {
+    const file = new Web3File([bytes], filename, {
       path,
       lastModified
     })
@@ -41,7 +41,7 @@ describe('web3File', () => {
     const filename = 'file.txt'
     const bytes = new TextEncoder().encode(data)
 
-    const file = Web3File.fromBytes(filename, bytes)
+    const file = Web3File.fromBytes(bytes, filename)
 
     validateRequiredContent(file, filename)
     await validateAllData(file, bytes)
@@ -52,7 +52,7 @@ describe('web3File', () => {
     const filename = 'file.txt'
     const bytes = new TextEncoder().encode(data)
 
-    const file = Web3File.fromString(filename, data)
+    const file = Web3File.fromString(data, filename)
 
     validateRequiredContent(file, filename)
     await validateAllData(file, bytes)
