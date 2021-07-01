@@ -1,6 +1,12 @@
 # web3-file
 
-The [Web File](https://developer.mozilla.org/en-US/docs/Web/API/File) implementation for Web3.
+[![Build](https://github.com/web3-storage/web3-file/actions/workflows/main.yml/badge.svg)](https://github.com/web3-storage/web3-file/actions/workflows/main.yml)
+[![dependencies Status](https://status.david-dm.org/gh/web3-storage/web3-file.svg)](https://david-dm.org/web3-storage/web3-file)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Downloads](https://img.shields.io/npm/dm/web3-file.svg)](https://www.npmjs.com/package/web3-file)
+[![Minzipped size](https://badgen.net/bundlephobia/minzip/web3-file)](https://bundlephobia.com/result?p=web3-file)
+
+> The [Web File](https://developer.mozilla.org/en-US/docs/Web/API/File) implementation for Web3.
 
 ## Table of Contents
 
@@ -18,7 +24,7 @@ The [Web File](https://developer.mozilla.org/en-US/docs/Web/API/File) implementa
   + [`Web3File.fromString`](#web3filefromstring)
   + [`Web3File.fromReadableStream`](#web3filefromreadablestream)
   + [`Web3File.fromBlob`](#web3filefromblob)
-  + [`Web3File.fromFile`](#web3filefromfile)%
+  + [`Web3File.fromFile`](#web3filefromfile)
 
 ## Motivation
 
