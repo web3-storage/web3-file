@@ -58,6 +58,12 @@ export class Web3File {
     return new Blob(blobParts)
   }
 
+  async text () {
+    const blob = await this.blob()
+
+    return blob.text()
+  }
+
   /**
    * @param {Uint8Array} data
    * @param {string} filename
@@ -72,7 +78,7 @@ export class Web3File {
    * @param {string} filename
    * @param {Web3FileOpts} options
    */
-  static fromString (data, filename, options) {
+  static fromText (data, filename, options) {
     const bytes = new TextEncoder().encode(data)
 
     return this.fromBytes(bytes, filename, options)

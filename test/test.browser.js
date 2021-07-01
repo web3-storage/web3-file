@@ -8,11 +8,12 @@ import { Web3File } from '../src/index.js'
 import {
   validateBlobData,
   validateContentData,
+  validateTextData,
   validateRequiredContent
 } from './utils.js'
 
 describe('web3File in the browser', () => {
-  [validateBlobData, validateContentData].map((validator) => { // eslint-disable-line
+  [validateBlobData, validateContentData, validateTextData].map((validator) => { // eslint-disable-line
     describe(`with ${validator.name}`, () => {
       it('can create a Web3File from Blob', async () => {
         const data = 'web3file'
