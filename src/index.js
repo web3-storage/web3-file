@@ -1,5 +1,4 @@
 import { Blob } from '@web-std/blob'
-import { concat, toString } from 'uint8arrays'
 import toIterable from 'browser-readablestream-to-it'
 
 /**
@@ -60,13 +59,9 @@ export class Web3File {
   }
 
   async text () {
-    let textParts = new Uint8Array([])
+    const blob = await this.blob()
 
-    for await (const part of this._content) {
-      textParts = concat([textParts, part])
-    }
-
-    return toString(textParts)
+    return blob.text()
   }
 
   /**
