@@ -15,7 +15,7 @@ The [Web File](https://developer.mozilla.org/en-US/docs/Web/API/File) implementa
   + [`Web3File#iterator()`](#web3fileiterator)
   + [`Web3File#blob()`](#web3fileblob)
   + [`Web3File.fromBytes`](#web3filefrombytes)
-  + [`Web3File.fromString`](#web3filefromstring)
+  + [`Web3File.fromText`](#web3filefromtext)
   + [`Web3File.fromReadableStream`](#web3filefromreadablestream)
   + [`Web3File.fromBlob`](#web3filefromblob)
   + [`Web3File.fromFile`](#web3filefromfile)%
@@ -101,6 +101,12 @@ Get file content readable source iterator.
 
 Get file content as a Blob.
 
+### `Web3File#text()`
+
+- Returns `Promise<String>`
+
+Get file content as Text.
+
 ### `Web3File.fromBytes`
 
 Takes [Uint8Array bytes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) to create a Web3File.
@@ -111,14 +117,14 @@ import Web3File from 'web3-file'
 const file = Web3File.fromBytes(new Uint8Array([2, 44, 1]), 'file.zip')
 ```
 
-### `Web3File.fromString`
+### `Web3File.fromText`
 
 Takes a string content to create a Web3File.
 
 ```js
 import { Web3File } from 'web3-file'
 
-const file = Web3File.fromString('web3file', 'file.txt')
+const file = Web3File.fromText('web3file', 'file.txt')
 ```
 
 ### `Web3File.fromReadableStream`

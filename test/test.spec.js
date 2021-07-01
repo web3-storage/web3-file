@@ -47,12 +47,12 @@ describe('web3File', () => {
     await validateAllData(file, bytes)
   })
 
-  it('can create a Web3File from string', async () => {
+  it('can create a Web3File from text', async () => {
     const data = 'web3file'
     const filename = 'file.txt'
     const bytes = new TextEncoder().encode(data)
 
-    const file = Web3File.fromString(data, filename)
+    const file = Web3File.fromText(data, filename)
 
     validateRequiredContent(file, filename)
     await validateAllData(file, bytes)

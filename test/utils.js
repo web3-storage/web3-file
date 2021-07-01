@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { equals, concat } from 'uint8arrays'
+import { equals, concat, toString } from 'uint8arrays'
 
 import { Blob } from '@web-std/blob'
 
@@ -19,6 +19,16 @@ export function validateRequiredContent (file, name) {
 export async function validateAllData (file, bytes) {
   await validateBlobData(file, bytes)
   await validateContentData(file, bytes)
+  await validateTextData(file, bytes)
+}
+
+/**
+ * @param {import('../src/index').Web3File} file
+ * @param {Uint8Array} bytes
+ */
+export async function validateTextData (file, bytes) {
+  const text = await file.text()
+  expect(text).to.eql(toString(bytes))
 }
 
 /**

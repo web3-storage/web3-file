@@ -41,7 +41,8 @@
   "license": "(Apache-2.0 AND MIT)",
   "dependencies": {
     "@web-std/blob": "2.1.1",
-    "browser-readablestream-to-it": "^1.0.2"
+    "browser-readablestream-to-it": "^1.0.2",
+    "uint8arrays": "^2.1.5"
   },
   "devDependencies": {
     "@web-std/file": "1.1.0",
@@ -50,8 +51,7 @@
     "mocha": "^8.4.0",
     "playwright-test": "^5.0.0",
     "standard": "^16.0.3",
-    "typescript": "^4.2.4",
-    "uint8arrays": "^2.1.5"
+    "typescript": "^4.2.4"
   },
   "standard": {
     "ignore": [
