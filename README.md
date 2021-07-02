@@ -55,6 +55,7 @@ Please note that the same options of the constructor can be provided in the stat
 | content | `AsyncIterable<Uint8Array>` | File content to be read |
 | filename | `string` | filename |
 | [options] | `object` | Web3File options |
+| [options.cid] | `CID` | File [`CID`](https://github.com/multiformats/js-multiformats/blob/master/src/cid.js) |
 | [options.path] | `string` | File Path |
 | [options.lastModified] | `number` | Last modified timestamp |
 
@@ -76,6 +77,12 @@ const file = new Web3File(
 - Returns `string`
 
 Get file name.
+
+### `Web3File#cid`
+
+- Returns [`CID`](https://github.com/multiformats/js-multiformats/blob/master/src/cid.js)
+
+Get CID of the file.
 
 ### `Web3File#path`
 

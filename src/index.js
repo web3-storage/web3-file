@@ -16,6 +16,7 @@ export class Web3File {
     this._filename = filename
     this._lastModified = options.lastModified || Date.now()
     this._path = options.path
+    this._cid = options.cid
   }
 
   /**
@@ -31,6 +32,14 @@ export class Web3File {
    */
   get path () {
     return this._path || ''
+  }
+
+  /**
+   * Get File cid
+   * @returns {CID|undefined}
+   */
+  get cid () {
+    return this._cid
   }
 
   get lastModified () {
@@ -116,5 +125,6 @@ export class Web3File {
 
 /**
  * @typedef {import('./types').Web3FileOpts} Web3FileOpts
+ * @typedef {import('./types').CID} CID
  * @typedef {import('@web-std/file').File} File
  */
